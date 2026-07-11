@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 aiogram
 sqlalchemy
 asyncpg
 python-dotenv
-=======
 aiogram>=3.7.0
 sqlalchemy
 asyncpg
@@ -11,4 +9,3 @@ python-dotenv
 SQLAlchemy
 asyncpg
 environs>=11.0.0
->>>>>>> ff7484511949085803d3df6a4b46e3d46ef16fd8
