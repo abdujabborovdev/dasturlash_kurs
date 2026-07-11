@@ -21,17 +21,14 @@ async def tolov_frontend(call: CallbackQuery, state: FSMContext):
     await state.set_state(Check.chek)
 
 
-    bosh_menu = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Bosh menu", callback_data="bosh_menu", icon_custom_emoji_id='5255703720078879038')]
-    ])
+    
     await call.message.edit_media(
         media=InputMediaPhoto(
             media=rasm,
             caption="<b>Tolov haqida chekingizni<tg-emoji emoji-id='5208575215738573162'>🧾</tg-emoji>\n"
                     "Rasm yokida pdf Formatda yuboring<tg-emoji emoji-id='5470177992950946662'>👇</tg-emoji></b>",
             parse_mode=ParseMode.HTML
-        ),
-        reply_markup=bosh_menu
+        )
     )
 
 @router.message((F.photo | F.document), Check.chek)
