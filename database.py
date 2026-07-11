@@ -7,10 +7,17 @@ from sqlalchemy import Integer, BigInteger, String, Date, ForeignKey
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
 
+
+
+DATABASE_URL = os.getenv("DATABASE_URL").replace(
+    "postgresql://",
+    "postgresql+asyncpg://"
+)
 
 engine = create_async_engine(DATABASE_URL)
+
+
 async_session = async_sessionmaker(engine, expire_on_commit=False)
 
 class Base(AsyncAttrs, DeclarativeBase):
