@@ -13,8 +13,10 @@ BOT_TOKEN = (os.getenv("BOT_TOKEN") or "").strip().strip('"').strip("'")
 # Adminlar ro'yxatini int tipida listga o'giramiz
 ADMINS = [int(admin.strip()) for admin in (os.getenv("ADMINS") or "").split(",") if admin.strip()]
 
-DATABASE_URL = (os.getenv("DATABASE_URL") or "").strip().strip('"').strip("'")
-
+DATABASE_URL = os.getenv("DATABASE_URL").replace(
+    "postgresql://",
+    "postgresql+asyncpg://"
+)
 # VIP_KANAL_ID ni shu yerda .env dan o'qib, int ga o'giramiz (handlersdan import qilmaymiz!)
 VIP_KANAL_ID = int((os.getenv("VIP_KANAL_ID") or "0").strip().strip('"').strip("'"))
 
