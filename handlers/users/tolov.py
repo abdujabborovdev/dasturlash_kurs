@@ -208,4 +208,3 @@ async def bosh_menu(call: CallbackQuery):
     await call.message.answer(f"""Salom, <b>{call.from_user.full_name}</b> <tg-emoji emoji-id='5472055112702629499'>👋</tg-emoji>\n\n"
                     f"<blockquote expandable><i>Mukamal <tg-emoji emoji-id='5190498849440931467'>🥷</tg-emoji> Dasturlash botiga hush kelibsiz</i>\n\n"
                     f"Ozingizga keraklik darslikni golga kiritish uchun quydagi tugmani bosing <tg-emoji emoji-id='5470177992950946662'>👇</tg-emoji></bzlockquote>""",parse_mode=ParseMode.HTML,reply_markup=kurs)
->>>>>>> ff7484511949085803d3df6a4b46e3d46ef16fd8
