@@ -203,15 +203,7 @@ async def reject_payment(call: CallbackQuery):
 async def bosh_menu(call: CallbackQuery):
     await call.answer()
 
-    photo = FSInputFile("handlers/users/img_4.png")
 
-    await call.message.edit_media(
-        media=InputMediaPhoto(
-            media=photo,
-            caption=f"Salom, <b>{call.from_user.full_name}</b> <tg-emoji emoji-id='5472055112702629499'>👋</tg-emoji>\n\n"
+    await call.message.answer(f"""Salom, <b>{call.from_user.full_name}</b> <tg-emoji emoji-id='5472055112702629499'>👋</tg-emoji>\n\n"
                     f"<blockquote expandable><i>Mukamal <tg-emoji emoji-id='5190498849440931467'>🥷</tg-emoji> Dasturlash botiga hush kelibsiz</i>\n\n"
-                    f"Ozingizga keraklik darslikni golga kiritish uchun quydagi tugmani bosing <tg-emoji emoji-id='5470177992950946662'>👇</tg-emoji></bzlockquote>",
-            parse_mode=ParseMode.HTML
-        ),
-        reply_markup=kurs
-    )
+                    f"Ozingizga keraklik darslikni golga kiritish uchun quydagi tugmani bosing <tg-emoji emoji-id='5470177992950946662'>👇</tg-emoji></bzlockquote>""",parse_mode=ParseMode.HTML,reply_markup=kurs)
